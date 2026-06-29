@@ -121,7 +121,7 @@ function createManualMobileMoneyOrder(payload) {
     order,
     instructions:
       `Order ${order.orderId} created for ${order.productTitle}. Pay ${currency} ${amount.toLocaleString()} to ${merchantPhone} ` +
-      `for ${businessName}. After payment is received, open the admin page and mark this order as paid.`,
+      `for ${businessName}. After payment, return to this page and click Confirm payment. If it is not confirmed immediately, wait a moment and try again.`,
   };
 }
 
@@ -268,7 +268,6 @@ app.get("/api/health", (_request, response) => {
     priceAmount,
     currency,
     orders: readOrders().length,
-    adminUrl: `http://localhost:${port}/admin?token=${encodeURIComponent(adminConfirmToken)}`,
   });
 });
 
@@ -282,7 +281,6 @@ app.post("/api/create-checkout-session", async (request, response) => {
       currency: result.order.currency,
       provider: result.order.provider,
       instructions: result.instructions,
-      adminUrl: `http://localhost:${port}/admin?token=${encodeURIComponent(adminConfirmToken)}`,
     });
   } catch (error) {
     response.status(500).json({ error: error.message });
