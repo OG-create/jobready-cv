@@ -2524,7 +2524,7 @@ function App() {
         setPaymentOrderId(data.orderId);
         setPaymentMessage(
           data.instructions ||
-            `Order ${data.orderId} created. Complete the mobile money payment, then click "Confirm payment".`
+            `Order ${data.orderId} created. Pay using the mobile money number shown above, then click "Confirm payment".`
         );
         return;
       }
@@ -2560,7 +2560,7 @@ function App() {
       if (!data.paid) {
         setPaymentMessage(
           data.message ||
-            `Payment for order ${paymentOrderId} is not confirmed yet. In manual testing mode, the admin must mark this order as paid before downloads unlock.`
+            `Payment is not confirmed yet. Please complete the mobile money payment, then click "Confirm payment" again after a short moment.`
         );
         return;
       }
@@ -2850,7 +2850,7 @@ function App() {
               <div className="payment-order-box">
                 <span>Order ID</span>
                 <strong>{paymentOrderId}</strong>
-                <small>Use this order in the admin page after confirming mobile money payment.</small>
+                <small>Keep this Order ID. You may be asked for it if payment support is needed.</small>
               </div>
             )}
             {paymentMessage && <p className="notice">{paymentMessage}</p>}
