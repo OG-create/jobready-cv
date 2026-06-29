@@ -1,0 +1,16 @@
+{
+  "name": "cv-builder-payment-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Payment backend for the paid CV builder download flow.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}
