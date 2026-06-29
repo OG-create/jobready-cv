@@ -626,7 +626,7 @@ function parseEmployment(lines) {
 
     // Pattern:
     // Acting Regional Manager
-    // Tanzania Buildings Agency (TBA), Ruvuma Region
+    // Example Company, Region
     // 2022 – Present
     if (lineIsRole && nextIsInstitution && next2HasYears) {
       pushCurrent();
@@ -1220,8 +1220,8 @@ function activeVerbBullet(text, level = 1) {
 
   if (level >= 1) {
     bullet = bullet
-      .replace(/\s+aligned with TBA’s mission and national development priorities/i, "")
-      .replace(/\s+aligned with TBA's mission and national development priorities/i, "")
+      .replace(/\s+aligned with the organization’s mission and national development priorities/i, "")
+      .replace(/\s+aligned with the organization's mission and national development priorities/i, "")
       .replace(/\s+in line with\s+.*$/i, "")
       .replace(/\s+including drawings, BOQs coordination, and technical inputs/i, " including drawings and BOQ inputs")
       .replace(/\s+under public sector procurement and contract frameworks.*$/i, " under public procurement frameworks")
